@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'core/constants/app_constants.dart';
 import 'core/theme/app_theme.dart';
-import 'presentation/screens/foundation_screen.dart';
+import 'presentation/screens/design_gallery_screen.dart';
 
 void main() {
   // Riverpod is the single, final state-management choice for the project.
@@ -19,7 +19,7 @@ class BarakahCityApp extends StatelessWidget {
       title: AppConstants.appName,
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
-      home: const FoundationScreen(),
+      home: const DesignGalleryScreen(),
     );
   }
 }
