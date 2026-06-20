@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'app_colors.dart';
+import 'app_radii.dart';
+import 'app_typography.dart';
 
-/// Central theme for Barakah City. UI widgets read from here so the visual
-/// identity (peaceful, green/gold, soft) stays consistent across screens.
+/// Central theme for Barakah City. UI widgets read from here (and the token
+/// classes) so the visual identity — peaceful, green/gold, soft, rounded —
+/// stays consistent across every screen.
 class AppTheme {
   AppTheme._();
 
@@ -13,17 +16,37 @@ class AppTheme {
         colorScheme: ColorScheme.fromSeed(
           seedColor: AppColors.green,
           primary: AppColors.green,
+          onPrimary: AppColors.textOnBrand,
           secondary: AppColors.gold,
-          surface: AppColors.cream,
+          onSecondary: AppColors.textOnBrand,
+          surface: AppColors.surfaceWhite,
+          onSurface: AppColors.textDark,
+          error: AppColors.critical,
         ),
-        appBarTheme: const AppBarTheme(
+        textTheme: AppTypography.textTheme,
+        appBarTheme: AppBarTheme(
           backgroundColor: AppColors.green,
-          foregroundColor: Colors.white,
+          foregroundColor: AppColors.textOnBrand,
           centerTitle: true,
+          elevation: 0,
+          titleTextStyle:
+              AppTypography.titleM.copyWith(color: AppColors.textOnBrand),
         ),
-        textTheme: const TextTheme().apply(
-          bodyColor: AppColors.textDark,
-          displayColor: AppColors.textDark,
+        dividerTheme: const DividerThemeData(
+          color: AppColors.hairline,
+          thickness: 1,
+          space: 1,
+        ),
+        cardTheme: CardThemeData(
+          color: AppColors.surfaceWhite,
+          elevation: 0,
+          shape: const RoundedRectangleBorder(borderRadius: AppRadii.card),
+        ),
+        dialogTheme: DialogThemeData(
+          backgroundColor: AppColors.surfaceWhite,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(AppRadii.xl),
+          ),
         ),
       );
 }
