@@ -37,6 +37,8 @@ dependencies:
   flame: ^1.37.0
   flutter_riverpod: ^3.3.2
   shared_preferences: ^2.5.5
+  # Baloo 2 (display) + Inter (UI/data) — the Day 2 type pairing.
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
